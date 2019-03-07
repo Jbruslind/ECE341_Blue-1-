@@ -22,6 +22,8 @@ The project also allowed for teams to specify their own 2 unique requirements
 
 1. The system will have WiFi capabilities 10m or more away from a standard household router and 
 will have a web interface that is accessible from a laptop/browser. 
+
+
 2. The system must be able to accept voice commands through a mobile phone using the Google Now 
 API for all functionality. 
 
