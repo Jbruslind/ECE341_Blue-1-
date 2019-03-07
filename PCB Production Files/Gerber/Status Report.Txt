@@ -1,0 +1,34 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 1:51:56 PM On 1/2/2019
+
+Output: Gerber
+Type  : Gerber
+From  : Variant [[No Variations]] of PCB Document [BTSwitch.CMPcbDoc]
+   Generated File[BTSwitch.GTL]
+   Generated File[BTSwitch.GBL]
+   Generated File[BTSwitch.GPB]
+   Generated File[BTSwitch.GPT]
+   Generated File[BTSwitch.GTO]
+   Generated File[BTSwitch.GTP]
+   Generated File[BTSwitch.GTS]
+   Generated File[BTSwitch.GBS]
+   Generated File[BTSwitch.GBO]
+   Generated File[BTSwitch.GKO]
+   Generated File[BTSwitch.Outline]
+   Generated File[BTSwitch.Assembly Text Top]
+   Generated File[BTSwitch.Assembly Text Bottom]
+   Generated File[BTSwitch.Assembly Top]
+   Generated File[BTSwitch.Dimensions Top]
+   Generated File[BTSwitch.3D Top]
+   Generated File[BTSwitch.Courtyard Top]
+   Generated File[BTSwitch.Courtyard Bottom]
+   Generated File[BTSwitch.RUL]
+   Generated File[BTSwitch.EXTREP]
+   Generated File[BTSwitch.REP]
+
+
+Files Generated   : 21
+Documents Printed : 0
+
+Finished Output Generation At 1:51:58 PM On 1/2/2019

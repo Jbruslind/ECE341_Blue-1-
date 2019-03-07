@@ -1,0 +1,27 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: BTSwitch.CMPcbDoc   1/2/2019  1:42:59 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : BTSwitch-RoundHoles.TXT
+ASCII SlotHoles File : BTSwitch-SlotHoles.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        11.8mil (0.29972mm)      Round          9                0.39 Inch (9.90 mm)
+T2        12.2mil (0.30988mm)      Round          57               15.25 Inch (387.36 mm)
+T3        23.6mil (0.59944mm)      Round          15               6.26 Inch (158.94 mm)
+T4        28mil (0.7112mm)         Round          3                1.42 Inch (36.01 mm)
+T5        30mil (0.762mm)          Round          16               5.67 Inch (144.01 mm)
+T6        39.4mil (1.00076mm)      Round          4                0.70 Inch (17.76 mm)
+T7        39.4mil (1.00076mm)      Slot           2                288.02 Inch (7315.65 mm)
+T8        43.3mil (1.09982mm)      Round          7                3.76 Inch (95.49 mm)
+T9        59.1mil (1.50114mm)      Round          3                0.39 Inch (10.00 mm)
+T10       90mil (2.286mm)          Round          1                0.00 Inch (0.00 mm)
+T11       118.1mil (2.99974mm)     Round          4                9.19 Inch (233.50 mm)
+T12       177.2mil (4.50088mm)     Round          2                0.30 Inch (7.50 mm)
+T13       196.9mil (5.00126mm)     Round          9                7.41 Inch (188.32 mm)
+---------------------------------------------------------------------------
+Totals                                            132              338.76 Inch (8604.43 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:01

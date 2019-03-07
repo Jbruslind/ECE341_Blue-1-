@@ -1,0 +1,14 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Bluetooth Switch.PrjPcb]
+   Generated File[BTSwitch-RoundHoles.TXT]
+   Generated File[BTSwitch-SlotHoles.TXT]
+   Generated File[BTSwitch-BoardEdgeRout.TXT]
+   Generated File[BTSwitch.LDP]
+   Generated File[BTSwitch.DRR]
+
+
+Files Generated   : 5
+Documents Printed : 0
+
+Finished Output Generation At 1:55:08 PM On 1/2/2019

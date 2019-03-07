@@ -1,0 +1,27 @@
+Capacitance,Resistance,Case/Package,Case/Package (SI),Package/Case,Comment,Description,Designator,Digikey,Footprint,LibRef,Quantity,Purchasing
+,,,,,LED,LED; PCB ; Green; 0.63mcd; 3mm; T-1; 7mA; 1.9V; 565nm; 25deg; GaP on GaP; 20V; 20mW; -40,"3_3V, 5V, N1, N2, N3",,PCB-a4kbstwpa15hyka10z5q-1,CMP-afe165a651817026-6,5,Already have in hand
+,,,,,Würth Elektronik 61300311121,"Board-To-Board Connector, Vertical, Wr-Phd Series, Through Hole, Header, 3, 2.54 Mm",J2,,PCB-4c070sxu9rgckamhssqs-1,CMP-8a90426ffa175557-17,1,Already have in hand
+,,,,,Pololu XT60 YELLOW,Power connector; 65A; PIN: 2; Module: yellow,J1,,PCB-42h2ntsp5e5udn23h2hi-1,CMP-db0d1124dea204ca-7,1,Amazon
+,5.1K,,,3216,Res1,Resistor; Thick Film; Res 0.005 Ohms; Pwr-Rtg 1 W; Tol 1%; SMT; 2512; Curr-Sense; CT,ACS710_R_Sense,,PCB-w608zr93f2jrqwdmzt1l-1,CMP-027ac92f87baddbd-2,1,Digikey
+,,SOD-123,,,1N4148,"Fast Switching Diode, 100V, 400mW, Surface Mount, SOD-123","D1, D2, D3",,PCB-1N4148W-7-F,CMP-791fb3587d52a6d8-18,3,Digikey
+,,,,,Maxim Integrated MAX40200AUK+T,MAX40200AUK Seires 5.5 V 1 A MicropowerCurrent Switch Diode - SOT23-5,"D4, D5",,PCB-5992oh1g9ftksyaw6nl7-1,CMP-ca4407a63c661583-2,2,Digikey
+,,,,,SYM-889e43fc15205759-1,"Thermal Circuit Breaker, Push to Reset, 250VAC, 5AMP, .250 Quick Connect",F1,,PCB-832i69x6ehi1igon8e0u-1,CMP-889e43fc15205759-2,1,Digikey
+,,,,,FCI 10103592-0001LF,Conn Micro USB Type B RCP 5 POS 0.65mm Solder RA SMD 5 Terminal 1 Port T/R,J3,,PCB-93gureqnc5na2ljp2ys4-1,CMP-714ab89b8005ae8d-14,1,Digikey
+,,,,,Qualtek 739W-X2/32,Receptacle; Female; Convenience Outlet; NEMA 5-15R; PCB Terminals; Black; 15A; 125VAC,"J4, J5, J6",,PCB-67s0c3f5wkn5okutfpzj-1,CMP-1fd6d3ae91e2c011-2,3,Digikey
+,,,,,SYM-b9d97116e885661e-1,"General Purpose Relay, SRA Series, Power, Non Latching, SPDT, 12 VDC, 20 A","K1, K2, K3",SONGLE SRA 20A,PCB-6zkvxj3q6xq20xnkkjg3-1,CMP-b9d97116e885661e-3,3,Digikey
+,,,,,Espressif Systems ESP32-WROOM-32,"Wi-Fi/BT BLE Module ESP32-D0WDQ6, SPI Flash, UART",M1,,PCB-2wsaxr5oyyiks99lfuw0-1,CMP-ba1676706f1765d1-4,1,Digikey
+,,SOT-363,,,MBT2222ADW1T1G,"General Purpose Transistor, NPN Silicon, 6-Pin SOT-363, Pb-Free, Tape and Reel","Q1, Q2, Q3",,ONSC-SOT-363-6-419B-02_V,CMP-854660-2,3,Digikey
+,1.00 M,0603 (SI),,,Yageo RC0201FR-071ML,Res Thick Film 0201 1M Ohm 1% 1/20W ±200ppm/°C Molded SMD SMD Paper T/R,"R1, R2, R3, R6",,PCB-izhuxvfgpg1kpuec29hj-1,CMP-002acbb13d71dfed-1,4,Digikey
+,,,,,TE Connectivity FSM4JH,Switch Tactile OFF (ON) Round Button PC Pins 0.05A 12VDC 1.57N Thru-Hole Radial Tape,"S1, S2",,PCB-acd06xmd0wg5ueuxhpdp-1,CMP-441d8f7279709bda-7,2,Digikey
+,,,,,Texas Instruments (TI) LM1117MPX-ADJ/NOPB,LDO Regulator Pos 1.25V to 13.8V 0.8A 4-Pin(3+Tab) SOT-223 T/R,U1,,SOT223,CMP-0062-01644-5,1,Digikey
+,,,,,ACS722LLCTR-40AU-T,"CURRENT SENSOR, 0.009A, NSOIC-8; Quiescent Current:9mA; Bandwidth:80kHz; Sensor Case Style:NSOIC; No. of Pins:8; Supply Voltage Min:3V; Supply Voltage Max:3.6V; Operating Temperature Min:-40 C; Operat","U2, U3",,TI-D8_N,CMP-19553975-3,2,Digikey
+,,,,,Allegro MicroSystems LLC ACS71020KMABTR-030B3-I2C,"Single Phase, Isolated, Power Mo, +/-30A,3V3, 16 SOIC W",U4,,ACS71020,CMP-c7eb0b7c5e75182c-1,1,Digikey
+,,MLP,,,Silicon Labs CP2102-GM,Microcontroller Solutions - Interface Products USB to UART Bdg Chip,U5,,PCB-r2q4wj0b96jlqp92htuq-1,CMP-967561-7,1,Digikey
+10.0 µF,,,,,10uF,Capacitor Tantalum Solid 10uF 25V 10% (5.5 X 9mm) Radial 2.5mm 2.5 Ohm 125C Bulk,"C1, C2, C3",,PCB-imxzc0h3ulzopa7zwnih-1,CMP-6a29a3234e15b5ee-2,3,Resistore
+,,,,3216 (SI),.1uF,Cap Ceramic 1uF 25V X7R 20% SMD 1206 125C Plastic T/R,"C4, C6, C7, C8",,CSMD1206GRID25PADB,CMP-150561-3,4,Resistore
+,,,,3216 (SI),1uF,Cap Ceramic 1uF 25V X7R 20% SMD 1206 125C Plastic T/R,C5,,CSMD1206GRID25PADB,CMP-150561-3,1,Resistore
+,1.5K,,,2012,Vishay Dale TNPU0805100KBZEN00,Thin Film Resistors - SMD 1/8watt 100Kohms 0.1% 5ppm,R4,,RESC2013X55X40NL15T20,CMP-1878956-2,1,Resistore
+,3.48K,,,2012,Vishay Dale TNPU0805100KBZEN00,Thin Film Resistors - SMD 1/8watt 100Kohms 0.1% 5ppm,R5,,RESC2013X55X40NL15T20,CMP-1878956-2,1,Resistore
+,12K,805,2012,,Panasonic ERJ-6GEYJ822V,Thick Film Resistors - SMD 0805 8.2Kohms 5% Tol,"R7, R9, R11, R12",,RESC2013X70X40ML20T20,CMP-3687578-2,4,Resistore
+,470,805,2012,,Panasonic ERJ-6GEYJ822V,Thick Film Resistors - SMD 0805 8.2Kohms 5% Tol,"R8, R10, R21",,RESC2013X70X40ML20T20,CMP-3687578-2,3,Resistore
+,1K,805,2012,,Panasonic ERJ-6GEYJ822V,Thick Film Resistors - SMD 0805 8.2Kohms 5% Tol,"R13, R14, R15, R16, R17, R18, R19, R20, R22, R23",,RESC2013X70X40ML20T20,CMP-3687578-2,10,Resistore
