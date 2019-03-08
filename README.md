@@ -14,7 +14,7 @@ than 10 seconds without any training or having previously seen the interface.
 3. The system will use only US standard plugins for connecting to external devices and will not 
 allow any object with a diameter greater than 1mm to enter the enclosure, and will be disable if 
 more than 5A is drawn from the wall power.
-4. The system must turn off the output after a time of upto 1 hour ± 1 minute when enabled.
+4. The system must turn off the output after a time of up to 1 hour ± 1 minute when enabled.
 5. The system will be able to accept commands from a mobile phone over 20 feet away from the plug-ins.
 
 ##	Specialized requirements
@@ -25,7 +25,7 @@ will have a web interface that is accessible from a laptop/browser.
 2. The system must be able to accept voice commands through a mobile phone using the Google Now 
 API for all functionality. 
 
-## System Overview
+# System Overview
 The overall project was broken up into many different "blocks" that could be individually assigned
 and constructed. 
 
@@ -60,6 +60,11 @@ for control of the ESP32 microcontroller through a "user friendly" interface. Th
 are little restrictions to how this can be done other than it must use Wifi and be 
 easy to navigate. 
 
+# More info
+
+Each directory has a small readme file that explains what aspect it served in the project
+as well as more information about how the project was done. (Example: PCB production files
+contain info about the PCB)
 
 
 

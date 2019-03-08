@@ -14,7 +14,7 @@ than 10 seconds without any training or having previously seen the interface.
 3. The system will use only US standard plugins for connecting to external devices and will not 
 allow any object with a diameter greater than 1mm to enter the enclosure, and will be disable if 
 more than 5A is drawn from the wall power.
-4. The system must turn off the output after a time of upto 1 hour ± 1 minute when enabled.
+4. The system must turn off the output after a time of up to 1 hour ± 1 minute when enabled.
 5. The system will be able to accept commands from a mobile phone over 20 feet away from the plug-ins.
 
 ##	Specialized requirements
@@ -25,11 +25,11 @@ will have a web interface that is accessible from a laptop/browser.
 2. The system must be able to accept voice commands through a mobile phone using the Google Now 
 API for all functionality. 
 
-## System Overview
+# System Overview
 The overall project was broken up into many different "blocks" that could be individually assigned
 and constructed. 
 
-![Alt text](Jbruslind/ECE341_Blue-1-/blob/master/Block Diagram/HighLevelBlockDiagramV3.png)
+![Block Diagram connections](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Block%20Diagram/HighLevelBlockDiagramV3.png)
 
 1. Fuse - Find a fuse (or circuit equivalent) that is able to break only at 5A within ~.5sec. 
 This should be resettable and can be inserted easily into a PCB
