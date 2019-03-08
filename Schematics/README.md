@@ -3,7 +3,7 @@ This folder contains all the schematic files as pdfs for easy viewing. The proje
 was designed using the Altium Circuitmaker software. All project files are open 
 for anyone to use and can be found in the project search engine within Circuitmaker. 
 ##	MCU
-![MCU](https://github.com/Jbruslind/ECE341_Blue-1-/tree/master/Readme_images/MCU.png)
+![MCU](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/MCU.png)
 
 This is the ESP32 general connection page which provides ports to the other 
 necessary sheets within the project. The ESP needs a 3.3V VDD and all its pins
@@ -14,7 +14,7 @@ The BJTs are used for programming the ESP over USB (seen below in the UART->TTL 
 The switches on EN and IO0 are used for programming and resetting respectively.
 
 ##	UART Bridge
-![UART Bridge](https://github.com/Jbruslind/ECE341_Blue-1-/tree/master/Readme_images/UART_Bridge.png)
+![UART Bridge](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/UART_Bridge.png)
  
  The ESP32 does not have a native way to communicate over UART (USB signals), so a UART-TTL bridge
  was chosen to preform that job. The Silabs CP2012 is a popular choice among other microcontroller
@@ -23,7 +23,7 @@ The switches on EN and IO0 are used for programming and resetting respectively.
  
  ##	3.3V LDO
  
- ![3.3V LDO](https://github.com/Jbruslind/ECE341_Blue-1-/tree/master/Readme_images/3_3_LDO.png)
+ ![3.3V LDO](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/3_3_LDO.png)
  
  The input voltage that we are using for this board is expected to be 4.5 - 5.5V. The ESP32 and 
  the other peripheral sensors cannot tolerate this voltage normally. So a Low Dropout Regulator
@@ -34,14 +34,14 @@ The switches on EN and IO0 are used for programming and resetting respectively.
  
  ##	Input Plugs
  
- ![Input Plugs](https://github.com/Jbruslind/ECE341_Blue-1-/tree/master/Readme_images/Input_Plugs.png)
+ ![Input Plugs](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/Input_Plugs.png)
  
  This schematic is just the input USB port (for programming/power of the ESP32 and sensors)
  as well as testing pins for the 120Vac (line, neutral, and Egnd). 
  
  ## Current Sensor ACS722
  
- ![ACS722 Current Sensor](https://github.com/Jbruslind/ECE341_Blue-1-/tree/master/Readme_images/Current_Sensor_722.png)
+ ![ACS722 Current Sensor](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/Current_Sensor_722.png)
  
  The ACS722 is a very powerful current measuring chip that uses the Allegro Hall effect technology. This 
  chip is able to measure up to +-10A of current and output the result as a radiometric voltage signal
@@ -52,7 +52,7 @@ of 2^12 / 3.3V (or ~.8mV). This translates to a  .8mV/bit * 1/267 A/mV = .003 A/
 
 ## ACS71020 
 
-![ACS71020 Current/Voltage Sensor](https://github.com/Jbruslind/ECE341_Blue-1-/tree/master/Readme_images/ACS710202_Current_Sense.png)
+![ACS71020 Current/Voltage Sensor](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/ACS710202_Current_Sense.png)
 
 This chip is actually a very powerful current/voltage sensor for AC applications. Not only is it able to tolerate 120Vac up to
 30A, it can also preform RMS, power, actual power, and instantaneous power. The package is also isolated
@@ -65,7 +65,7 @@ own I2C drivers for this, which proved difficult as we were inexperienced.
 
 ## Relay Node
 
-![Relay Node](https://github.com/Jbruslind/ECE341_Blue-1-/tree/master/Readme_images/Relay_node.png)
+![Relay Node](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/Relay_node.png)
 
 For this the relays are simply electromechanical with a rated usage of ~100,000 switches. They are 
 5V compatible and take ~70.2mA for full activation/saturation. In this circuit the ESP will send a 
