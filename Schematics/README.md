@@ -71,6 +71,22 @@ For this the relays are simply electromechanical with a rated usage of ~100,000 
 5V compatible and take ~70.2mA for full activation/saturation. In this circuit the ESP will send a 
 3.3V signal to a 2N222 bjt amplifier (with ~100 gain, this equates to ~.7mA from the ESP) which in
 turn will supply the necessary current for the relays. Each one has an LED line attached to it so that
-there will be a status LED which will light up when active (when the ESP sends a +3.3V signal). 
+there will be a status LED which will light up when active (when the ESP sends a +3.3V signal). As of 
+the writing of this, the relays were connected wrong in that the output line was connected to the 
+"Normally Closed" (NC) pin of the relay (meaning when ESP sends 3.3V it will be open, and normally closed)
+This should be changed to the "Normally Open" pin. 
+
+## Voltage Selection Diodes
+
+![Voltage Select](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/Voltage_Selector_Diode.png)
+
+There will be situations where we would like to only power the ESP32/peripheral sensors (to program, test, etc) and *not* 
+anything else (since powering the relays might overcurrent a USB 2.0 port on say a laptop. As such it would be good to have 
+a USB voltage input and a normal 5V input. Having 2 separate voltages however can cause issues (if they are trying to 
+backdrive each other). A solution was made where we would use 2 Oring diodes that will only let the higher of the 2 
+voltages act as the driving voltage, while still allowing the other to be connected. This lets us power only the 
+ESP32/periphery using the USB voltage (to program) and still being able to plug in the 5V line later on if we want to 
+do testing later. We can also power the whole board from the main 5V while using the USB connection 
+to do debugging. 
 
  
