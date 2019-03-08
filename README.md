@@ -2,7 +2,7 @@
 Final project for ECE 341 (Junior Design II). Made by Jorian Bruslind, Mack Hall, and Zach Bendt. 
 This project uses an ESP32 microcontroller to facilitate all the necessary functions: Relay control, 
 sensor measurement, relay control, and bluetooth/wifi connections. 
-#Requirements for project
+#	Requirements for project
 
 ##	Base Engineering requirements
 The project's base requirements, standard for all bluetooth switch teams
@@ -29,7 +29,7 @@ API for all functionality.
 The overall project was broken up into many different "blocks" that could be individually assigned
 and constructed. 
 
-![Alt text](Jbruslind/ECE341_Blue-1-/blob/master/Block Diagram/HighLevelBlockDiagramV3.png)
+![Block Diagram connections](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Block%20Diagram/HighLevelBlockDiagramV3.png)
 
 1. Fuse - Find a fuse (or circuit equivalent) that is able to break only at 5A within ~.5sec. 
 This should be resettable and can be inserted easily into a PCB
