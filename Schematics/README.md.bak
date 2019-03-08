@@ -1,0 +1,33 @@
+#	Schematic files
+This folder contains all the schematic files as pdfs for easy viewing. The project
+was designed using the Altium Circuitmaker software. All project files are open 
+for anyone to use and can be found in the project search engine within Circuitmaker. 
+##	MCU
+![MCU Schematic](https://github.com/Jbruslind/ECE341_Blue-1-/tree/master/Readme_images/MCU.png)
+
+This is the ESP32 general connection page which provides ports to the other 
+necessary sheets within the project. The ESP needs a 3.3V VDD and all its pins
+are 3.3V tolerant (not 5V). The inputs are for the I2C bus, 2 radiometric current sensors, 
+3 relay control lines, UART programming, and for power/gnd.
+
+The BJTs are used for programming the ESP over USB (seen below in the UART->TTL bridge).
+The switches on EN and IO0 are used for programming and resetting respectively.
+
+##	UART Bridge
+![UART Bridge](https://github.com/Jbruslind/ECE341_Blue-1-/tree/master/Readme_images/UART_Bridge.png)
+ 
+ The ESP32 does not have a native way to communicate over UART (USB signals), so a UART-TTL bridge
+ was chosen to preform that job. The Silabs CP2012 is a popular choice among other microcontroller
+ development boards and has a proven design. This chip will take in the USB signals from some external
+ controller and program the ESP32. 
+ 
+ ##	3.3V LDO
+ 
+ ![3.3V LDO](https://github.com/Jbruslind/ECE341_Blue-1-/tree/master/Readme_images/MCU.png)
+ 
+ The input voltage that we are using for this board is expected to be 4.5 - 5.5V. The ESP32 and 
+ the other peripheral sensors cannot tolerate this voltage normally. So a Low Dropout Regulator
+ was chosen to step this 5V voltage down to 3.3V. This was chosen to be the LM1117 which is, again,
+ a popular choice among development boards for 3.3V supplies. 
+ 
+ 
