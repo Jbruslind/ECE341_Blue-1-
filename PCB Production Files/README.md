@@ -6,6 +6,8 @@ Top Silkscreen Overlay, Top Soldermask Layer, Bottom Copper Layer, Bottom Silksc
 Overlay, Bottom Soldermask Layer, and the Keepout Layer which serves as the board outline).
 This directory also holes the drill files (Slotted holes and round holes)
 
+![Render of board](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/Top_View_PCB.png)
+
 
 The gerber files directory contains all the above files as well as all the other layers
 that are not used in production (usually just used for reference inside CircuitMaker). This
