@@ -28,7 +28,14 @@ transistor and peripheral capacitors/resistors. This was grouped this way so all
 important connections would be close together for easy routing. Other groupings
 included the relay nodes (which included the relays, current sensors, flyback diodes, 
 status LEDs, output plugs, and peripheral resistors/capacitors) and the power supply
-which included the ORing diodes, input filtering capacitors, and Linear Dropout Regulator.   
+which included the ORing diodes, input filtering capacitors, and Linear Dropout Regulator. 
+
+  
+![Highlighted Sections](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Block%20Diagram/Top_View_PCB_highlights.png)
+
+1. Red indicates the ESP32 section
+2. Blue indicates the Power section
+3. Yellow indicates the Relay Node section
 
 ### Connectors
 For this project, a USB B connection was chosen to act as our USB interface as it is 
