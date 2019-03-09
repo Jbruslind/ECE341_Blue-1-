@@ -1,0 +1,5 @@
+# Final System Checkoff Documentation
+
+This folder holds all of the artifacts used to demonstrate to our client, Westley Wurscher, that our system has met all of the engineeering requirements that we had agreed upon. All of the PDFs are artifacts showing a rough idea of how our system works, including a block diagram, interface definitions, a BOM, and more. 
+
+There is also a folder called "Videos", which has (you guessed it) videos that show our system working as intended. We have a video to show that our timer is capable of reaching 60 minutes and capable of keeping time, a video showing that our system turns off once our timer is finished, a video showing that the system is controllable via bluetooth smartphone app, a video showing that our system is controllable through a WiFi interface, and, finally, a video showing that our system is controllable via a voice command input.
