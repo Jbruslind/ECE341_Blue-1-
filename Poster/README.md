@@ -1,4 +1,4 @@
-# Firmware Code
+# Poster
 
 This project was for ECE 341/2 at Oregon State University. At the end of the second term, teams would show off their projects at a Junior Design Expo. This was the poster used to show off this project on 3/14/19 by Bluetooth Switch group 1.
 
