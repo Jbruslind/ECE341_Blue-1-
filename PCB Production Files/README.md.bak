@@ -28,7 +28,14 @@ transistor and peripheral capacitors/resistors. This was grouped this way so all
 important connections would be close together for easy routing. Other groupings
 included the relay nodes (which included the relays, current sensors, flyback diodes, 
 status LEDs, output plugs, and peripheral resistors/capacitors) and the power supply
-which included the ORing diodes, input filtering capacitors, and Linear Dropout Regulator.   
+which included the ORing diodes, input filtering capacitors, and Linear Dropout Regulator. 
+
+  
+![Highlighted Sections](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/Top_View_PCB_highlights.png)
+
+1. Red indicates the ESP32 section
+2. Blue indicates the Power section
+3. Yellow indicates the Relay Node section
 
 ### Connectors
 For this project, a USB B connection was chosen to act as our USB interface as it is 
@@ -43,6 +50,4 @@ PCB mount plugs (which were adapted panel mount plugs) on Digikey [here](https:/
 The input DC power was chosen to be an XT30 plug which is a 2 pin, yellow, friction fit 
 plug that is often used on drones/quadcopters for lithium batteries. DC power only needed
 to provide .5A and the XT30 is rated for 30A per plug.  
-
-![Block Diagram connections](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Block%20Diagram/HighLevelBlockDiagramV3.png)
 

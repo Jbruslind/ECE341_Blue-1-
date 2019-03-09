@@ -31,7 +31,7 @@ status LEDs, output plugs, and peripheral resistors/capacitors) and the power su
 which included the ORing diodes, input filtering capacitors, and Linear Dropout Regulator. 
 
   
-![Highlighted Sections](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Block%20Diagram/Top_View_PCB_highlights.png)
+![Highlighted Sections](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/Top_View_PCB_highlights.png)
 
 1. Red indicates the ESP32 section
 2. Blue indicates the Power section
@@ -42,14 +42,20 @@ For this project, a USB B connection was chosen to act as our USB interface as i
 robust and very durable. Initially the project used a USB micro due to its abundance
 in other products, but this was found to be easily broken and torn out of the board. 
 
+![USB B Connector](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/USB_B.jpg)
+
+
 The power outlets were chosen to be NEMA standard C13 plugs so that way we would only 
 need to solder the plugs into the board (no wires). Unfortunatly most of these plugs
 were panel mount, meaning it was not easy to plug into a PCB, but we were able to find 
 PCB mount plugs (which were adapted panel mount plugs) on Digikey [here](https://www.digikey.com/product-detail/en/qualtek/739W-X2-32-A/Q1211-ND/8681866)
 
+![C13 Plug made by Qualtek](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/NEMAC13Plug.jpg)
+
+
 The input DC power was chosen to be an XT30 plug which is a 2 pin, yellow, friction fit 
 plug that is often used on drones/quadcopters for lithium batteries. DC power only needed
 to provide .5A and the XT30 is rated for 30A per plug.  
 
-![Block Diagram connections](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Block%20Diagram/HighLevelBlockDiagramV3.png)
+![XT30 Connectors](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/XT30-2.jpg)
 
