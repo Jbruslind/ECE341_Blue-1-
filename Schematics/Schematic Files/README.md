@@ -17,7 +17,7 @@ The switches on EN and IO0 are used for programming and resetting respectively.
 ![UART Bridge](https://github.com/Jbruslind/ECE341_Blue-1-/blob/master/Readme_images/UART_Bridge.png)
  
  The ESP32 does not have a native way to communicate over UART (USB signals), so a UART-TTL bridge
- was chosen to preform that job. The Silabs CP2012 is a popular choice among other microcontroller
+ was chosen to perform that job. The Silabs CP2012 is a popular choice among other microcontroller
  development boards and has a proven design. This chip will take in the USB signals from some external
  controller and program the ESP32. 
  
@@ -59,7 +59,8 @@ This chip is actually a very powerful current/voltage sensor for AC applications
 for voltages up to 1047Vrms in basic isolation and 517Vrms in reinforced isolation. The measurement values
 are read over the I2C bus, making communication easy and space efficient. 
 
-*note: we actually had a very difficult time getting this part to work as the chip itself is very new
+
+*note*: we actually had a very difficult time getting this part to work as the chip itself is very new
 (released around Nov '18) and no examples for implementation were found online. So we had to make our 
 own I2C drivers for this, which proved difficult as we were inexperienced. 
 
@@ -86,7 +87,7 @@ a USB voltage input and a normal 5V input. Having 2 separate voltages however ca
 backdrive each other). A solution was made where we would use 2 Oring diodes that will only let the higher of the 2 
 voltages act as the driving voltage, while still allowing the other to be connected. This lets us power only the 
 ESP32/periphery using the USB voltage (to program) and still being able to plug in the 5V line later on if we want to 
-do testing later. We can also power the whole board from the main 5V while using the USB connection 
+do testing. We can also power the whole board from the main 5V while using the USB connection 
 to do debugging. 
 
  
