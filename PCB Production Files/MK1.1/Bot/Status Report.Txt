@@ -1,0 +1,13 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [Bluetooth Switch.PrjPcb]
+   Generated File[BTSwitch.GBO]
+   Generated File[BTSwitch.RUL]
+   Generated File[BTSwitch.EXTREP]
+   Generated File[BTSwitch.REP]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 12:10:33 PM On 1/21/2019

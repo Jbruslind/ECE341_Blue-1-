@@ -1,0 +1,30 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: BTSwitch.CMPcbDoc   1/21/2019  12:10:02 PM
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : BTSwitch-RoundHoles.TXT
+ASCII SlotHoles File : BTSwitch-SlotHoles.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        11.8mil (0.29972mm)      Round          9                0.39 Inch (9.90 mm)
+T2        12.2mil (0.30988mm)      Round          59               16.44 Inch (417.47 mm)
+T3        15.7mil (0.39878mm)      Round          12               3.90 Inch (99.06 mm)
+T4        28mil (0.7112mm)         Round          2                0.25 Inch (6.25 mm)
+T5        30mil (0.762mm)          Round          16               5.64 Inch (143.34 mm)
+T6        36.2mil (0.91948mm)      Round          4                0.26 Inch (6.50 mm)
+T7        39.4mil (1.00076mm)      Round          4                0.70 Inch (17.76 mm)
+T8        39.4mil (1.00076mm)      Slot           2                288.02 Inch (7315.65 mm)
+T9        43.3mil (1.09982mm)      Round          3                0.20 Inch (5.08 mm)
+T10       50mil (1.27mm)           Round          15               5.83 Inch (148.17 mm)
+T11       78.7mil (1.99898mm)      Round          3                0.74 Inch (18.75 mm)
+T12       90mil (2.286mm)          Round          1                0.00 Inch (0.00 mm)
+T13       90.6mil (2.30124mm)      Round          2                0.47 Inch (12.04 mm)
+T14       102.4mil (2.60096mm)     Round          2                0.20 Inch (5.00 mm)
+T15       118.1mil (2.99974mm)     Round          4                9.19 Inch (233.50 mm)
+T16       196.9mil (5.00126mm)     Round          9                7.41 Inch (188.32 mm)
+---------------------------------------------------------------------------
+Totals                                            147              339.64 Inch (8626.79 mm)
+
+Total Processing Time (hh:mm:ss) : 00:00:00
