@@ -145,35 +145,31 @@ class RxCallbacks: public BLECharacteristicCallbacks {
 
       if (rxValue.length() > 0) {
         // Do stuff based on the signal received from the app
-        if (rxValue.find("SYS_ON") != -1) { 
-          plug_one = 3.6*pow(10,6);
-          plug_two = 3.6*pow(10,6);
-          plug_three = 3.6*pow(10,6);
-        }
-        else if (rxValue.find("SYS_OFF") != -1) {
-          plug_one = 0;
-          plug_two = 0;
-          plug_three = 0;
-        }
         
-        else if (rxValue.find("A") != -1) { 
+        if (rxValue.find("A") != -1) { 
+          Serial.print("TURN ON 1");
           plug_one = 3.6*pow(10,6);
         }
         else if (rxValue.find("B") != -1) {
+          Serial.print("TURN OFF 1");
           plug_one = 0;
         }
         
-        if (rxValue.find("C") != -1) { 
+        if (rxValue.find("C") != -1) {
+          Serial.print("TURN ON 2"); 
           plug_two = 3.6*pow(10,6);
         }
         else if (rxValue.find("D") != -1) {
+          Serial.print("TURN OFF 2");
           plug_two = 0;
         }
         
-        if (rxValue.find("E") != -1) { 
+        if (rxValue.find("E") != -1) {
+          Serial.print("TURN ON 3"); 
           plug_three = 3.6*pow(10,6);
         }
         else if (rxValue.find("F") != -1) {
+          Serial.print("TURN OFF 3");
           plug_three = 0;
         }
         //Serial.println();
@@ -197,7 +193,7 @@ void InitalizeBLE(){
 
   // Setup BLE Characteristics
   RxCharacteristic = Service->createCharacteristic(RX_UUID, BLECharacteristic::PROPERTY_WRITE);
-  TxCharacteristic = Service->createCharacteristic(TX_UUID, BLECharacteristic::PROPERTY_WRITE | BLECharacteristic::PROPERTY_NOTIFY);
+  TxCharacteristic = Service->createCharacteristic(TX_UUID, BLECharacteristic::PROPERTY_NOTIFY);
   
 
   // Start the service
@@ -275,9 +271,7 @@ void loop() {
   Timer1Pkg = String("|T1|") + String(get_time(time_one, plug_one)) + String("|");
   Timer2Pkg = String("|T2|") + String(get_time(time_two, plug_two)) + String("|");
   Timer3Pkg = String("|T3|") + String(get_time(time_three, plug_three)) + String("|");
-//  if(millis() - stop_time >= 500)
-//  {
-//    stop_time = millis();
+
     if(TxCounter == 16){
       TxCounter = 0;
     }
@@ -364,7 +358,7 @@ void loop() {
 
     TxCharacteristic->notify();
     TxCounter++;
-//  }
+
      if (!client.connected()) { //Checks if we're connected to an MQTT broker, if not try
       long now = millis();
       if (now - lastReconnectAttempt > 5000) {
@@ -379,14 +373,9 @@ void loop() {
       // Client connected
         if(client.connected()) //only publish if we're actually connected
         {
-          //long now = millis();
-          //if (now - lastReconnectAttempt > 500) 
-          //{
-            //lastReconnectAttempt = now;
        client.publish("/Switch/Data", Data.c_str()); //Publish heartbeat of data        
             //}
         }
-      //delay(300);
       client.loop();
     }
     delay(500);
