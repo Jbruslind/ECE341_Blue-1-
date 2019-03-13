@@ -190,11 +190,6 @@ void InitalizeBLE(){
   // Setup BLE Characteristics
   RxCharacteristic = Service->createCharacteristic(RX_UUID, BLECharacteristic::PROPERTY_WRITE);
   
-  TxCharacteristic = Service->createCharacteristic(TX_UUID, BLECharacteristic::PROPERTY_WRITE | BLECharacteristic::PROPERTY_NOTIFY | BLECharacteristic::PROPERTY_READ);
-  TxCharacteristic->addDescriptor(new BLE2902());
-              
-  RxCharacteristic->setCallbacks(new RxCallbacks());
-  TxCharacteristic->setCallbacks(new RxCallbacks());
 
   // Start the service
   Service->start();
@@ -205,7 +200,7 @@ void InitalizeBLE(){
 }
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   
   InitalizeBLE();
   
@@ -271,7 +266,9 @@ void loop() {
   String Timer1Pkg = String("|T1|") + String(get_time(time_one, plug_one)) + String("|");
   String Timer2Pkg = String("|T2|") + String(get_time(time_two, plug_two)) + String("|");
   String Timer3Pkg = String("|T3|") + String(get_time(time_three, plug_three)) + String("|");
-
+  if(millis() - stop_time >= 500)
+  {
+    stop_time = millis();
     if(TxCounter == 16){
       TxCounter = 0;
     }
@@ -356,13 +353,9 @@ void loop() {
     Serial.println(Timer3Pkg);
     }
 
-  TxCharacteristic->notify();
-  delay(500);
-  
-  
-  if(millis() - stop_time > 500)
-  {
-    stop_time = millis();
+    TxCharacteristic->notify();
+    TxCounter++;
+  }
      if (!client.connected()) { //Checks if we're connected to an MQTT broker, if not try
       long now = millis();
       if (now - lastReconnectAttempt > 5000) {
@@ -386,9 +379,6 @@ void loop() {
       //delay(300);
       client.loop();
     }
-    ///delay(300);
-  }
-  TxCounter ++; 
 }
 
 
