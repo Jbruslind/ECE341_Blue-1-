@@ -8,7 +8,7 @@
 #include <PubSubClient.h>
 
 #include <Wire.h>
-#include "Countimer.h"
+//#include "Countimer.h"
 /************************************************
  * Bluetooth Stuff
  */
@@ -129,6 +129,14 @@ int bias_bravo = 0;
 
 long stop_time = 0;
 
+String voltagePkg = "";
+String current1Pkg = "";
+String current2Pkg = "";
+String current3Pkg = "";
+String Timer1Pkg = "";
+String Timer2Pkg = "";
+String Timer3Pkg = "";
+
 
 //Handles when signal is received by the app
 class RxCallbacks: public BLECharacteristicCallbacks {
@@ -189,6 +197,7 @@ void InitalizeBLE(){
 
   // Setup BLE Characteristics
   RxCharacteristic = Service->createCharacteristic(RX_UUID, BLECharacteristic::PROPERTY_WRITE);
+  TxCharacteristic = Service->createCharacteristic(TX_UUID, BLECharacteristic::PROPERTY_WRITE | BLECharacteristic::PROPERTY_NOTIFY);
   
 
   // Start the service
@@ -259,103 +268,103 @@ void loop() {
   Data = String("!|") + max_vol + String("|") + max_cur + String("|") + A_current_1() + String("|") + A_current_2() + String("|") 
   + get_time(time_one, plug_one) + String("|") + get_time(time_two, plug_two) + String("|")+ get_time(time_three, plug_three) + String("|?");  //Append all the data to one string
 //  Serial.println(Data);
-  String voltagePkg = String("|V|") + String(max_vol) + String("|");
-  String current1Pkg = String("|C1|") + String(max_cur + String("|"));
-  String current2Pkg = String("|C2|") + String(A_current_1()) + String("|");
-  String current3Pkg = String("|C3|") + String(A_current_2()) + String("|");
-  String Timer1Pkg = String("|T1|") + String(get_time(time_one, plug_one)) + String("|");
-  String Timer2Pkg = String("|T2|") + String(get_time(time_two, plug_two)) + String("|");
-  String Timer3Pkg = String("|T3|") + String(get_time(time_three, plug_three)) + String("|");
-  if(millis() - stop_time >= 500)
-  {
-    stop_time = millis();
+  voltagePkg = String("|V|") + String(max_vol) + String("|");
+  current1Pkg = String("|C1|") + String(max_cur + String("|"));
+  current2Pkg = String("|C2|") + String(A_current_1()) + String("|");
+  current3Pkg = String("|C3|") + String(A_current_2()) + String("|");
+  Timer1Pkg = String("|T1|") + String(get_time(time_one, plug_one)) + String("|");
+  Timer2Pkg = String("|T2|") + String(get_time(time_two, plug_two)) + String("|");
+  Timer3Pkg = String("|T3|") + String(get_time(time_three, plug_three)) + String("|");
+//  if(millis() - stop_time >= 500)
+//  {
+//    stop_time = millis();
     if(TxCounter == 16){
       TxCounter = 0;
     }
     
     if(TxCounter == 0){
     TxCharacteristic->setValue(voltagePkg.c_str());
-    Serial.println(voltagePkg);
+    //Serial.println(voltagePkg);
     }
 
     else if(TxCounter == 1){
     TxCharacteristic->setValue(Timer1Pkg.c_str());
-    Serial.println(Timer1Pkg);
+    //Serial.println(Timer1Pkg);
     }
 
     else if(TxCounter == 2){
     TxCharacteristic->setValue(Timer2Pkg.c_str());
-    Serial.println(Timer2Pkg);
+    //Serial.println(Timer2Pkg);
     }
 
     else if(TxCounter == 3){
     TxCharacteristic->setValue(Timer3Pkg.c_str());
-    Serial.println(Timer3Pkg);
+    //Serial.println(Timer3Pkg);
     }
     
     else if(TxCounter == 4){
     TxCharacteristic->setValue(current1Pkg.c_str());
-    Serial.println(current1Pkg);
+    //Serial.println(current1Pkg);
     }
 
     else if(TxCounter == 5){
     TxCharacteristic->setValue(Timer1Pkg.c_str());
-    Serial.println(Timer1Pkg);
+    //Serial.println(Timer1Pkg);
     }
 
     else if(TxCounter == 6){
     TxCharacteristic->setValue(Timer2Pkg.c_str());
-    Serial.println(Timer2Pkg);
+    //Serial.println(Timer2Pkg);
     }
 
     else if(TxCounter == 7){
     TxCharacteristic->setValue(Timer3Pkg.c_str());
-    Serial.println(Timer3Pkg);
+    //Serial.println(Timer3Pkg);
     }
 
     else if(TxCounter == 8){
     TxCharacteristic->setValue(current2Pkg.c_str());
-    Serial.println(current2Pkg);
+    //Serial.println(current2Pkg);
     }
 
     else if(TxCounter == 9){
     TxCharacteristic->setValue(Timer1Pkg.c_str());
-    Serial.println(Timer1Pkg);
+    //Serial.println(Timer1Pkg);
     }
 
     else if(TxCounter == 10){
     TxCharacteristic->setValue(Timer2Pkg.c_str());
-    Serial.println(Timer2Pkg);
+    //Serial.println(Timer2Pkg);
     }
 
     else if(TxCounter == 11){
     TxCharacteristic->setValue(Timer3Pkg.c_str());
-    Serial.println(Timer3Pkg);
+    //Serial.println(Timer3Pkg);
     }
 
     else if(TxCounter == 12){
     TxCharacteristic->setValue(current3Pkg.c_str());
-    Serial.println(current3Pkg);
+    //Serial.println(current3Pkg);
     }
 
     else if(TxCounter == 13){
     TxCharacteristic->setValue(Timer1Pkg.c_str());
-    Serial.println(Timer1Pkg);
+    //Serial.println(Timer1Pkg);
     }
 
     else if(TxCounter == 14){
     TxCharacteristic->setValue(Timer2Pkg.c_str());
-    Serial.println(Timer2Pkg);
+    //Serial.println(Timer2Pkg);
     }
 
     else if(TxCounter == 15){
     TxCharacteristic->setValue(Timer3Pkg.c_str());
-    Serial.println(Timer3Pkg);
+    //Serial.println(Timer3Pkg);
     }
 
     TxCharacteristic->notify();
     TxCounter++;
-  }
+//  }
      if (!client.connected()) { //Checks if we're connected to an MQTT broker, if not try
       long now = millis();
       if (now - lastReconnectAttempt > 5000) {
@@ -365,7 +374,8 @@ void loop() {
           lastReconnectAttempt = 0; //Keep track of how long we've spend trying (will attempt every >=5 sec) 
         }
       }
-    } else { 
+    }
+    else { 
       // Client connected
         if(client.connected()) //only publish if we're actually connected
         {
@@ -379,6 +389,7 @@ void loop() {
       //delay(300);
       client.loop();
     }
+    delay(500);
 }
 
 
