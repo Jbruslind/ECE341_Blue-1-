@@ -29,11 +29,11 @@ BLECharacteristic* TxCharacteristic;
 
 
 class MyServerCallbacks: public BLEServerCallbacks {
-    void onConnect(BLEServer* pServer) {
+    void onConnect(BLEServer* Server) {
       deviceConnected = true;
     };
 
-    void onDisconnect(BLEServer* pServer) {
+    void onDisconnect(BLEServer* Server) {
       deviceConnected = false;
     }
 };
@@ -109,8 +109,8 @@ float final_current = 0;                     // float form of binary current bit
 float max_vol = 0;                           // biased and scaled voltage
 float max_cur = 0;                           // biased and scaled current
 
-#define SENSOR_BIAS_ALPHA 1850                                // zero current bias for 1st current sensor
-#define SENSOR_BIAS_BRAVO 1850                                // zero current bias for 2nd current sensor
+int SENSOR_BIAS_ALPHA = 0;                                // zero current bias for 1st current sensor
+int SENSOR_BIAS_BRAVO = 0;                                // zero current bias for 2nd current sensor
 
 const int num_readings_too = 25;                           // number of elements in shift register
 const int input_pin_alpha = 34;                               // input pin for 1st channel of microcontroller
@@ -207,7 +207,8 @@ void InitalizeBLE(){
   Service->start();
 
   // Start advertising
-  Server->getAdvertising()->start();
+  BLEAdvertising *ServerAdvertising = Server->getAdvertising();
+  ServerAdvertising->start();
   Serial.println("Waiting a client connection to notify...");
 }
 
@@ -225,6 +226,17 @@ void setup() {
   pinMode(relay_1, OUTPUT);
   pinMode(relay_2, OUTPUT);
   pinMode(relay_3, OUTPUT);
+  digitalWrite(relay_1, HIGH);
+  digitalWrite(relay_2, HIGH);
+  digitalWrite(relay_3, HIGH);
+  for(int i = 0; i < 10; i++)
+  {
+    SENSOR_BIAS_ALPHA = analogRead(csns_2) + SENSOR_BIAS_ALPHA;
+    SENSOR_BIAS_BRAVO = analogRead(csns_3) + SENSOR_BIAS_BRAVO;
+    delay(40);
+  }
+  SENSOR_BIAS_ALPHA = SENSOR_BIAS_ALPHA/10;
+  SENSOR_BIAS_BRAVO = SENSOR_BIAS_BRAVO/10;
     
   for (int i = 0; i < num_readings_too; i++) {                    // initialize all readings to 0
     readings_alpha[i] = 0;                        
@@ -235,15 +247,6 @@ void setup() {
     vol_readings[i] = 0;
     cur_readings[i] = 0;                        
   }  
-  /*
-   * Structure for the below class call is as follows: starting Hour, minute, second, 
-   * object behavior (count up or down), and what function to call when timer is done 
-   * (with any specific arguments)
-   */
-  //plug_three.setCounter(0,0,0,plug_three.COUNT_DOWN,timer_complete_3);
-  //plug_one.setCounter(0,0,0,plug_one.COUNT_DOWN,timer_complete_1); 
-  //plug_two.setCounter(0,0,0,plug_two.COUNT_DOWN,timer_complete_2);
-
 
   setup_wifi();
   client.setServer(mqtt_server, 1883);
