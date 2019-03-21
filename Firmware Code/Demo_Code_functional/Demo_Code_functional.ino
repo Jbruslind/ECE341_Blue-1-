@@ -27,18 +27,7 @@ BLECharacteristic* RxCharacteristic;
 #define TX_UUID "6E400036-B5A3-F393-E0A9-E50E24DCCA9E"
 BLECharacteristic* TxCharacteristic;
 
-
-class MyServerCallbacks: public BLEServerCallbacks {
-    void onConnect(BLEServer* Server) {
-      deviceConnected = true;
-    };
-
-    void onDisconnect(BLEServer* Server) {
-      deviceConnected = false;
-    }
-};
-
-
+BLEAdvertising *ServerAdvertising;
 /************************************************
  * Wifi Control Stuff
  */
@@ -147,37 +136,47 @@ class RxCallbacks: public BLECharacteristicCallbacks {
         // Do stuff based on the signal received from the app
         
         if (rxValue.find("A") != -1) { 
-          Serial.print("TURN ON 1");
+          //Serial.print("TURN ON 1");
           plug_one = 3.6*pow(10,6);
         }
         else if (rxValue.find("B") != -1) {
-          Serial.print("TURN OFF 1");
+          //Serial.print("TURN OFF 1");
           plug_one = 0;
         }
         
         if (rxValue.find("C") != -1) {
-          Serial.print("TURN ON 2"); 
+          //Serial.print("TURN ON 2"); 
           plug_two = 3.6*pow(10,6);
         }
         else if (rxValue.find("D") != -1) {
-          Serial.print("TURN OFF 2");
+          //Serial.print("TURN OFF 2");
           plug_two = 0;
         }
         
         if (rxValue.find("E") != -1) {
-          Serial.print("TURN ON 3"); 
+          //Serial.print("TURN ON 3"); 
           plug_three = 3.6*pow(10,6);
         }
         else if (rxValue.find("F") != -1) {
-          Serial.print("TURN OFF 3");
+          //Serial.print("TURN OFF 3");
           plug_three = 0;
         }
-        Serial.println();
-        Serial.println("*********");
+        //Serial.println();
+        //Serial.println("*********");
       }
       start_timers();
     }
     
+};
+
+class MyServerCallbacks: public BLEServerCallbacks {
+    void onConnect(BLEServer* Server) {
+      deviceConnected = true;
+    };
+
+    void onDisconnect(BLEServer* Server) {
+      deviceConnected = false;
+    }
 };
 
 void InitalizeBLE(){
@@ -207,7 +206,7 @@ void InitalizeBLE(){
   Service->start();
 
   // Start advertising
-  BLEAdvertising *ServerAdvertising = Server->getAdvertising();
+  ServerAdvertising = Server->getAdvertising();
   ServerAdvertising->start();
   Serial.println("Waiting a client connection to notify...");
 }
@@ -265,10 +264,7 @@ void setup() {
  * and any issues (flags in the system). 
  */
 void loop() {
- 
-  //plug_one.run();
-  //plug_two.run();
-  //plug_three.run();
+  
   check_time();
   get_sensor();
   Data = String("!|") + max_vol + String("|") + max_cur + String("|") + A_current_1() + String("|") + A_current_2() + String("|") 
@@ -281,11 +277,29 @@ void loop() {
   Timer1Pkg = String("|T1|") + String(get_time(time_one, plug_one)) + String("|");
   Timer2Pkg = String("|T2|") + String(get_time(time_two, plug_two)) + String("|");
   Timer3Pkg = String("|T3|") + String(get_time(time_three, plug_three)) + String("|");
-
-    if(TxCounter == 16){
-      TxCounter = 0;
-    }
+  
+  if(millis() - stop_time >= 500)
+  {
+    stop_time = millis();
+    TxCharacteristic->setValue(voltagePkg.c_str());
+    TxCharacteristic->notify();
+    TxCharacteristic->setValue(current1Pkg.c_str());
+    TxCharacteristic->notify();
+    TxCharacteristic->setValue(current2Pkg.c_str());
+    TxCharacteristic->notify();
+    TxCharacteristic->setValue(current3Pkg.c_str());
+    TxCharacteristic->notify();
+    TxCharacteristic->setValue(Timer1Pkg.c_str());
+    TxCharacteristic->notify();
+    TxCharacteristic->setValue(Timer2Pkg.c_str());
+    TxCharacteristic->notify();
+    TxCharacteristic->setValue(Timer3Pkg.c_str());
+    TxCharacteristic->notify();
     
+    
+    /*if(TxCounter == 16){
+      TxCounter = 0;
+    }    
     if(TxCounter == 0){
     TxCharacteristic->setValue(voltagePkg.c_str());
     //Serial.println(voltagePkg);
@@ -368,6 +382,7 @@ void loop() {
 
     TxCharacteristic->notify();
     TxCounter++;
+    */
 
      if (!client.connected()) { //Checks if we're connected to an MQTT broker, if not try
       long now = millis();
@@ -388,7 +403,7 @@ void loop() {
         }
       client.loop();
     }
-    delay(500);
+  }
 }
 
 
