@@ -32,6 +32,7 @@
      
     void setup()
     {
+
       Wire.begin(2, 14);
      
       Serial.begin(9600);
