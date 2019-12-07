@@ -33,7 +33,7 @@
     void setup()
     {
 
-      Wire.begin(2, 14);
+      Wire.begin();
      
       Serial.begin(9600);
       while (!Serial);             // Leonardo: wait for serial monitor
